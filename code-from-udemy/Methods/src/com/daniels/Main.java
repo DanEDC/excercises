@@ -2,21 +2,22 @@ package com.daniels;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-    int highScorePosition = calculateHighScorePosition(1500);
-    displayHighScorePosition("Daniel", highScorePosition);
+        int highScorePosition = calculateHighScorePosition(1500);
+        displayHighScorePosition("Daniel", highScorePosition);
 
-    highScorePosition = calculateHighScorePosition(900);
-    displayHighScorePosition("Kasia", highScorePosition);
+        highScorePosition = calculateHighScorePosition(900);
+        displayHighScorePosition("Kasia", highScorePosition);
 
-    highScorePosition = calculateHighScorePosition(400);
-    displayHighScorePosition("Andrzej", highScorePosition);
+        highScorePosition = calculateHighScorePosition(400);
+        displayHighScorePosition("Andrzej", highScorePosition);
 
-    highScorePosition = calculateHighScorePosition(50);
-    displayHighScorePosition("Iza", highScorePosition);
+        highScorePosition = calculateHighScorePosition(50);
+        displayHighScorePosition("Iza", highScorePosition);
 
-}
+    }
+
     public static void displayHighScorePosition(String playerName, int highScorePosition) {
         System.out.println(playerName + " managed to get into position " + highScorePosition + " on the high score table");
     }
