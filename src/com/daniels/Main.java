@@ -3,16 +3,17 @@ package com.daniels;
 public class Main {
 
     public static void main(String[] args) {
-        double myDouble = 20d;
-        double mySecondDouble = 80d;
-        double myTotal = (myDouble + mySecondDouble) * 25;
-        System.out.println(myTotal);
-        double myTotal2 = myTotal % 40;
-        System.out.println(myTotal2);
-        if (myTotal2 <= 20)
-            System.out.println("Total was over the limit");
-        double my = 10 % 3;
-        System.out.println(my);
-    }
 
+        int myIntValue = 5 / 3;
+        float myFloatValue = 5f / 3f;
+        double myDoubleValue = 5d / 3d;
+        System.out.println("myIntValue=" + myIntValue);
+        System.out.println("myFloatValue =" + myFloatValue);
+        System.out.println("myDoubleValue =" + myDoubleValue);
+
+        double myPound = 200d;
+        double PoundKgConverter = (myPound * 0.45359237d);
+        System.out.println("Kilograms =" + PoundKgConverter);
+        double pi = 3.141_592_7d;
+    }
 }
