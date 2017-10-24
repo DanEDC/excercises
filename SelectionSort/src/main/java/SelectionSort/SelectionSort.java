@@ -1,4 +1,4 @@
-package com.company;
+package SelectionSort;
 
 import java.util.Arrays;
 
