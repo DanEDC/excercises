@@ -1,4 +1,4 @@
-package com.company;
+package Fibbonaci_recursion;
 
 public class Fibbonaci_2 {
 
@@ -6,7 +6,7 @@ public class Fibbonaci_2 {
         if (i < 2) {
             return i;
         } else {
-            return calculateFibbonaciNumber( i - 1 ) + calculateFibbonaciNumber( i - 2 );
+            return calculateFibbonaciNumber(i - 1) + calculateFibbonaciNumber(i - 2);
         }
     }
 
