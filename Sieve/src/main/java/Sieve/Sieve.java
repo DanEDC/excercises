@@ -3,32 +3,38 @@ package Sieve;
 import org.apache.commons.lang.ArrayUtils;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Sieve {
     public static void main(String[] args) {
-        calculatePrimeNumbers(20);
+        calculatePrimeNumbers( 5 );
     }
 
-    public static void calculatePrimeNumbers(int max) {
-        int[] array = new int[max];
-        for (int i = 0; i < array.length; ++i) {
+    public static List<Integer> calculatePrimeNumbers(Integer max) {
+        Integer[] array = new Integer[max];
+        for (Integer i = 0; i < max; i++) {
             array[i] = i;
         }
-        for (int i = 2; i < array.length; ++i) {
-            for (int j = i + i; j < max; j += i) {
+        for (Integer i = 2; i < max; i++) {
+            for (Integer j = i + i; j < max; j += i) {
                 array[j] = -1;
             }
+            for (i = 3; i < max; i++) {
+                for (Integer j = i + i; j < max; j += i) {
+                    array[j] = -1;
+                }
 
-            {
-                System.out.println(Arrays.toString(array));
-            }
+                for (Integer j = i; j < max; j++) {
+                    array = (Integer[]) ArrayUtils.removeElement( array, 0 );
+                    array = (Integer[]) ArrayUtils.removeElement( array, 1 );
+                    array = (Integer[]) ArrayUtils.removeElement( array, -1 );
+                }
+                {
+                    System.out.println( Arrays.toString( array ) );
+                }
 
-            for (int j = i; j < max; ++j) {
-                array = (int[]) ArrayUtils.removeElement(array, -1);
-            }
-            {
-                System.out.println(Arrays.toString(array));
             }
         }
+        return null;
     }
 }

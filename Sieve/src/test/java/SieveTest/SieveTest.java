@@ -1,18 +1,24 @@
 package SieveTest;
 
+import Sieve.Sieve;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class SieveTest {
 
     @Test
-    public void shouldSortSimpleArray() {
+    public void shouldSortSimpleArray() throws Exception {
         //given
-        Integer[] numbers = {9, 4, 8, 1, 6};
+        Integer max = 10;
         //when
-        SelectionSort.sort(numbers);
+        List<Integer>result = Sieve.calculatePrimeNumbers(max);
         //then
-        Integer[] expected = {1, 4, 6, 8, 9};
-        assertArrayEquals(expected, numbers);
+        List<Integer> expected = Arrays.asList( 2, 3, 5, 7);
+        assertEquals(expected, result);
     }
 
 
