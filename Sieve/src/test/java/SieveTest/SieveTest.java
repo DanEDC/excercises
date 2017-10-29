@@ -15,11 +15,9 @@ public class SieveTest {
         //given
         Integer max = 10;
         //when
-        List<Integer>result = Sieve.calculatePrimeNumbers(max);
+        List<Integer> result = Sieve.calculatePrimeNumbers( 10 );
         //then
-        List<Integer> expected = Arrays.asList( 2, 3, 5, 7);
-        assertEquals(expected, result);
+        List<Integer> expected = Arrays.asList( 2, 3, 5, 7 );
+        assertEquals( expected, result );
     }
-
-
 }

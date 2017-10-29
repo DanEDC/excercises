@@ -1,13 +1,11 @@
 package Sieve;
 
-import org.apache.commons.lang.ArrayUtils;
-
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sieve {
     public static void main(String[] args) {
-        calculatePrimeNumbers( 5 );
+        calculatePrimeNumbers( 20 );
     }
 
     public static List<Integer> calculatePrimeNumbers(Integer max) {
@@ -19,22 +17,15 @@ public class Sieve {
             for (Integer j = i + i; j < max; j += i) {
                 array[j] = -1;
             }
-            for (i = 3; i < max; i++) {
-                for (Integer j = i + i; j < max; j += i) {
-                    array[j] = -1;
-                }
+        }
 
-                for (Integer j = i; j < max; j++) {
-                    array = (Integer[]) ArrayUtils.removeElement( array, 0 );
-                    array = (Integer[]) ArrayUtils.removeElement( array, 1 );
-                    array = (Integer[]) ArrayUtils.removeElement( array, -1 );
-                }
-                {
-                    System.out.println( Arrays.toString( array ) );
-                }
-
+        List<Integer> result = new ArrayList<>();
+        for (int i = 2; i < array.length; i++) {
+            if (array[i] != (-1)) {
+                result.add( array[i] );
             }
         }
-        return null;
+        System.out.println( result );
+        return result;
     }
 }
