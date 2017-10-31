@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Sieve {
     public static void main(String[] args) {
-        calculatePrimeNumbers( 20 );
+        calculatePrimeNumbers(20);
     }
 
     public static List<Integer> calculatePrimeNumbers(Integer max) {
@@ -22,10 +22,10 @@ public class Sieve {
         List<Integer> result = new ArrayList<>();
         for (int i = 2; i < array.length; i++) {
             if (array[i] != (-1)) {
-                result.add( array[i] );
+                result.add(array[i]);
             }
         }
-        System.out.println( result );
+        System.out.println(result);
         return result;
     }
 }
