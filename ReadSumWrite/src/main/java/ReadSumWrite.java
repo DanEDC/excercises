@@ -38,7 +38,12 @@ public class ReadSumWrite {
     }
 
     private static Integer sum(List<Integer> l) {
-        return 0;
+        Integer sum = 0;
+        for (int i = 0; i < l.size(); i++)
+            sum += new Integer(l.get(i));
+        {
+            return sum;
+        }
     }
 
 
