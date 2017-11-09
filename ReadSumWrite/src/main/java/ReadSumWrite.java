@@ -25,9 +25,10 @@ public class ReadSumWrite {
                     while (numbersScanner.hasNextInt()) {
                         lineIntegers.add( numbersScanner.nextInt() );
                     }
-                    printComponents( lineIntegers );
-                    System.out.println( sum( lineIntegers ) );
+                    if (!lineIntegers.isEmpty()) {
+                        printComponents( lineIntegers );
 
+                    }
                 }
             }
         }
