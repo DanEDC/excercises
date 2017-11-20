@@ -12,7 +12,7 @@ public class ReadSumWrite {
     public static void main(String[] args) throws IOException {
 
         {
-            Scanner scanner = new Scanner(new File("D:\\Users\\502123448\\Desktop\\Work\\Git\\solutions-3-daniel-edc\\solutions-3-daniel-edc\\ReadSumWrite\\src\\main\\resources\\1000.txt"));
+            Scanner scanner = new Scanner(new File("D:\\Users\\502123448\\Desktop\\Work\\Git\\solutions-3-daniel-edc\\ReadSumWrite\\src\\main\\resources\\1000.txt"));
             FileWriter writer = new FileWriter("output.txt");
             while (scanner.hasNextLine()) {
                 if (!scanner.hasNextInt()) {
@@ -34,7 +34,7 @@ public class ReadSumWrite {
         }
     }
 
-    private static void printComponents(FileWriter writer, List<Integer> l) throws IOException {
+    static void printComponents(FileWriter writer, List<Integer> l) throws IOException {
         StringBuilder builder = new StringBuilder("[");
         for (int i : l) builder.append(i).append(" + ");
         if (l.size() > 0) builder.deleteCharAt(builder.length() - 1);

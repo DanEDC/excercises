@@ -14,22 +14,26 @@ public class ReadSumWriteTest {
     @Test
     public void shouldSumNumbers() {
         //given
-        List<Integer> numbers = new ArrayList<Integer>(Arrays.asList(40, 50, 68, 72, 100));
+        List<Integer> numbers = new ArrayList<Integer>( Arrays.asList( 40, 50, 68, 72, 100 ) );
         //when
-        Integer result = ReadSumWrite.sum(numbers);
+        Integer result = ReadSumWrite.sum( numbers );
         //then
         Integer expected = 330;
-        assertEquals(expected, result);
+        assertEquals( expected, result );
     }
+
     @Test
-    private void shouldWriteNumbersAndSumToFile() throws IOException {
+    public void shouldWriteNumbersAndSumToFile() throws IOException {
         //given
-        List<Integer> numbers = new ArrayList<Integer>(Arrays.asList(40, 50, 68, 72, 100));
-        FileWriter TestWriter = new FileWriter("test.txt");
+        List<Integer> numbers = new ArrayList<Integer>( Arrays.asList( 40, 50, 68, 72, 100 ) );
+        FileWriter TestWriter = new FileWriter( "test.txt" );
         //when
-        ArrayList result = ReadSumWrite.printComponents(TestWriter, numbers);
+        //StringBuilder result = new StringBuilder(ReadSumWrite.printComponents(TestWriter, numbers));
+        ReadSumWrite.printComponents( TestWriter, numbers );
+        String result = numbers.toString();
         //then
-        Arrays.toString expected = 330;
-        assertEquals(expected, result);
+        String expected = new String( "[40 + 50 + 68 + 72 + 100 = 330]" );
+        TestWriter.close();
+        assertEquals( expected, result );
     }
 }
