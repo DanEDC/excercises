@@ -34,7 +34,6 @@ public class ReadSumWrite {
         }
     }
 
-
     private static void printComponents(FileWriter writer, List<Integer> l) throws IOException {
         StringBuilder builder = new StringBuilder("[");
         for (int i : l) builder.append(i).append(" + ");
@@ -44,14 +43,13 @@ public class ReadSumWrite {
         writer.write(builder.toString());
     }
 
-    private static Integer sum(List<Integer> l) {
+    static Integer sum(List<Integer> l) {
         Integer sum = 0;
-        for (int i : l) {
+        for (Integer i : l) {
             sum += i;
         }
         return sum;
     }
-
 }
 
 
