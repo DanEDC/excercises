@@ -1,12 +1,11 @@
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 public class ReadSumWriteTest {
 
@@ -26,14 +25,14 @@ public class ReadSumWriteTest {
     public void shouldWriteNumbersAndSumToFile() throws IOException {
         //given
         List<Integer> numbers = new ArrayList<Integer>( Arrays.asList( 40, 50, 68, 72, 100 ) );
-        FileWriter TestWriter = new FileWriter( "test.txt" );
+        StringWriter TestWriter = new StringWriter();
         //when
         //StringBuilder result = new StringBuilder(ReadSumWrite.printComponents(TestWriter, numbers));
         ReadSumWrite.printComponents( TestWriter, numbers );
-        String result = numbers.toString();
+        String result = TestWriter.toString();
+
         //then
-        String expected = new String( "[40 + 50 + 68 + 72 + 100 = 330]" );
-        TestWriter.close();
+        String expected = "[40 + 50 + 68 + 72 + 100 = 330]\n";
         assertEquals( expected, result );
     }
 }

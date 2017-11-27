@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,7 +35,7 @@ public class ReadSumWrite {
         }
     }
 
-    static void printComponents(FileWriter writer, List<Integer> l) throws IOException {
+    static void printComponents(Writer writer, List<Integer> l) throws IOException {
         StringBuilder builder = new StringBuilder("[");
         for (int i : l) builder.append(i).append(" + ");
         if (l.size() > 0) builder.deleteCharAt(builder.length() - 1);
@@ -50,7 +51,22 @@ public class ReadSumWrite {
         }
         return sum;
     }
-}
+
+    // mapowanie
+    /*static List<Integer> multiply(List<Integer> l, int multiplier) {
+        List<Integer> result = new ArrayList<>();
+        for (Integer element: l) {
+            result.add(multiplier * element);
+        }
+        return result;*/
+    }
+
+    /** flatMap
+     * [1, 2, 3] => [1, 5, 2, 10, 3, 15]
+     */
+    //static List<Integer> combinations(List<Integer> l, int multiplier) {
+
+
 
 
 
