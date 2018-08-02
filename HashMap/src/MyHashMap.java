@@ -1,4 +1,4 @@
-package pl.coderstrust.MyHash;
+package src;
 
 import java.util.*;
 
