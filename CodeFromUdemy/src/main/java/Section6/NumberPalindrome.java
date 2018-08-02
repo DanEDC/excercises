@@ -1,3 +1,5 @@
+package Section6;
+
 public class NumberPalindrome {
 
   public static void main(String[] args) {

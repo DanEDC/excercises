@@ -1,3 +1,5 @@
+package Section5;
+
 public class SecondsAndMinutesChallenge {
 
   private static final String INVALID_VALUE_MESSAGE = "Invalid value";

@@ -1,3 +1,5 @@
+package Section6;
+
 public class Sum3And5 {
 
     public static void main(String[] args) {
