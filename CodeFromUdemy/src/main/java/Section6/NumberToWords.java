@@ -4,7 +4,6 @@ public class NumberToWords {
 
   public static void main(String[] args) {
     numberToWords(201);
-    System.out.println(reverse(-2));
   }
 
   public static void numberToWords(int number) {
