@@ -3,33 +3,29 @@ package Section6;
 public class LargestPrime {
 
     public static void main(String[] args) {
-        System.out.println(getLargestPrime(21));
+        System.out.println(getLargestPrime(16));
     }
 
     public static int getLargestPrime(int number) {
-        if (number > 0) {
+        if (number > 1) {
             int n = 2;
-            while (n <= number) {
-                if (isPrimeNumber(n) && number % n == 0) {
+            int largestPrime = 0;
+            while (n < number) {
+                if ((n == 2 && number % 2 == 0) || ((n == 3 && number % 3 == 0))) {
+                    largestPrime = n;
                     n++;
-                } else n++;
+                } else if (n % 2 != 0 && n % 3 != 0 && number % n == 0) {
+                    largestPrime = n;
+                    n++;
+                } else {
+                    n++;
+                }
             }
-            return n;
+            if (largestPrime == 0) {
+                largestPrime = number;
+            }
+            return largestPrime;
         }
         return -1;
     }
-
-
-    public static boolean isPrimeNumber(int numberToCheck) {
-        if (numberToCheck >= 0 && numberToCheck <= 3) {
-            return true;
-        } else if (numberToCheck > 3) {
-            if ((numberToCheck % 2 != 0) && (numberToCheck % 3 != 0)) {
-                return true;
-            } else return false;
-        }
-        return false;
-    }
-
-
 }
