@@ -11,48 +11,48 @@ public class DayOfTheWeek {
     public static void printDayOfTheWeek(int day) {
         switch (day) {
             case 0:
-                System.out.println("Sunday");
+                System.out.print("Sunday");
                 break;
             case 1:
-                System.out.println("Monday");
+                System.out.print("Monday");
                 break;
             case 2:
-                System.out.println("Tuesday");
+                System.out.print("Tuesday");
                 break;
             case 3:
-                System.out.println("Wednesday");
+                System.out.print("Wednesday");
                 break;
             case 4:
-                System.out.println("Thursday");
+                System.out.print("Thursday");
                 break;
             case 5:
-                System.out.println("Friday");
+                System.out.print("Friday");
                 break;
             case 6:
-                System.out.println("Saturday");
+                System.out.print("Saturday");
                 break;
             default:
-                System.out.println("Invalid number, please type number from 0 to 6");
+                System.out.print("Invalid number, please type number from 0 to 6");
         }
     }
 
     public static void printDayOfTheWeek2(int anotherDay) {
         if (anotherDay == 0) {
-            System.out.println("Sunday");
+            System.out.print("Sunday");
         } else if (anotherDay == 1) {
-            System.out.println("Monday");
+            System.out.print("Monday");
         } else if (anotherDay == 2) {
-            System.out.println("Tuesday");
+            System.out.print("Tuesday");
         } else if (anotherDay == 3) {
-            System.out.println("Wednesday");
+            System.out.print("Wednesday");
         } else if (anotherDay == 4) {
-            System.out.println("Thursday");
+            System.out.print("Thursday");
         } else if (anotherDay == 5) {
-            System.out.println("Friday");
+            System.out.print("Friday");
         } else if (anotherDay == 6) {
-            System.out.println("Saturday");
+            System.out.print("Saturday");
         } else {
-            System.out.println("Invalid number, please type number from 0 to 6");
+            System.out.print("Invalid number, please type number from 0 to 6");
         }
 
     }
@@ -60,37 +60,37 @@ public class DayOfTheWeek {
     public static void printNumberInWord(int number) {
         switch (number) {
             case 0:
-                System.out.println("ZERO");
+                System.out.print("ZERO");
                 break;
             case 1:
-                System.out.println("ONE");
+                System.out.print("ONE");
                 break;
             case 2:
-                System.out.println("TWO");
+                System.out.print("TWO");
                 break;
             case 3:
-                System.out.println("THREE");
+                System.out.print("THREE");
                 break;
             case 4:
-                System.out.println("FOUR");
+                System.out.print("FOUR");
                 break;
             case 5:
-                System.out.println("FIVE");
+                System.out.print("FIVE");
                 break;
             case 6:
-                System.out.println("SIX");
+                System.out.print("SIX");
                 break;
             case 7:
-                System.out.println("SEVEN");
+                System.out.print("SEVEN");
                 break;
             case 8:
-                System.out.println("EIGHT");
+                System.out.print("EIGHT");
                 break;
             case 9:
-                System.out.println("NINE");
+                System.out.print("NINE");
                 break;
             default:
-                System.out.println("OTHER");
+                System.out.print("OTHER");
         }
     }
 }

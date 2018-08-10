@@ -3,7 +3,7 @@ package Section6;
 public class AllFactors {
 
   public static void main(String[] args) {
-    printFactors(6);
+    printFactors(8);
   }
 
   public static void printFactors(int number) {
@@ -11,7 +11,7 @@ public class AllFactors {
     if (number >= 1) {
       while (number >= factor) {
         if (number % factor == 0) {
-          System.out.println(factor);
+          System.out.print(factor + " ");
           factor++;
         } else {
           factor++;
@@ -19,7 +19,7 @@ public class AllFactors {
       }
 
     } else {
-      System.out.println("Invalid Value");
+      System.out.print("Invalid Value");
     }
   }
 
