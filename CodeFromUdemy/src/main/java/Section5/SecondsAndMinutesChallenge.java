@@ -5,8 +5,8 @@ public class SecondsAndMinutesChallenge {
   private static final String INVALID_VALUE_MESSAGE = "Invalid value";
 
   public static void main(String[] args) {
-    System.out.println(getDurationString(61, 0));
-    System.out.println(getDurationString(4000));
+    System.out.println(getDurationString(1000, 33));
+    System.out.println(getDurationString(6788800));
   }
 
   public static String getDurationString(int minutes, int seconds) {
