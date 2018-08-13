@@ -13,9 +13,7 @@ public class NumberPalindrome {
       int lastDigit = testNumber % 10;
       reverse = reverse * 10;
       reverse += lastDigit;
-      //System.out.println(reverse);
       testNumber = testNumber / 10;
-      //System.out.println(number);
     }
     if (number == reverse) {
       System.out.println(number + " is palindrome number");

@@ -52,7 +52,7 @@ public class NumberToWords {
         }
       }
     } else {
-      System.out.println("Invalid Value");
+      System.out.print("Invalid Value");
     }
   }
 

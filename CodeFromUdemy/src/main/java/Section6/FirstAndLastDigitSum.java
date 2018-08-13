@@ -3,7 +3,7 @@ package Section6;
 public class FirstAndLastDigitSum {
 
     public static void main(String[] args) {
-        System.out.println(sumFirstAndLastDigit(10));
+        System.out.println(sumFirstAndLastDigit(20006));
     }
 
     public static int sumFirstAndLastDigit(int number) {
