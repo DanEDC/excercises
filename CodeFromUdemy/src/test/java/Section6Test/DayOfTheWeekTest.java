@@ -20,11 +20,35 @@ public class DayOfTheWeekTest {
   }
 
   @Test
-  public void printDayOfTheWeek() {
+  public void shouldPrintMonday() {
+
+    DayOfTheWeek.printDayOfTheWeek(1);
+
+    assertEquals("Monday", result.toString());
   }
 
   @Test
-  public void printDayOfTheWeek2() {
+  public void shouldPrintErrorMessage() {
+
+    DayOfTheWeek.printDayOfTheWeek(8);
+
+    assertEquals("Invalid number, please type number from 0 to 6", result.toString());
+  }
+
+  @Test
+  public void shouldPrintSunday() {
+
+    DayOfTheWeek.printDayOfTheWeek2(0);
+
+    assertEquals("Sunday", result.toString());
+  }
+
+  @Test
+  public void shouldPrintErrorMessage2() {
+
+    DayOfTheWeek.printDayOfTheWeek2(7);
+
+    assertEquals("Invalid number, please type number from 0 to 6", result.toString());
   }
 
   @Test
