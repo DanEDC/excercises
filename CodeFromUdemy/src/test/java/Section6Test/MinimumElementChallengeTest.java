@@ -1,16 +1,15 @@
 package Section6Test;
 
-import static org.junit.Assert.assertEquals;
-
 import Section6.MinimumElementChallenge;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
+import java.util.Arrays;
+import java.util.Scanner;
+
+import static org.junit.Assert.assertEquals;
 
 public class MinimumElementChallengeTest {
-
-  public ByteArrayInputStream result;
-
 
   @Test
   public void shouldReturnLeastValueFromArray() {
@@ -23,40 +22,34 @@ public class MinimumElementChallengeTest {
 
   }
 
-//  @Test
-//  public void shouldReturnArrayWith5RandomElements(){
-//
-//    String input = "1";
-//    int expected [] = {1};
-//
-//    System.setIn(new ByteArrayInputStream(input.getBytes()));
-//
-//    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//    PrintStream ps = new PrintStream(baos);
-//    System.setOut(ps);
-//
-//    int [] result = MinimumElementChallenge.readIntegers(1);
-//
-//
-//
-//    //int [] result = MinimumElementChallenge.readIntegers(5);
-//
-//    assertEquals (expected, result.toString());
-//
+  @Test
+  public void shouldReturnArrayWithFiveElements() {
 
-//    Scanner scanner = new Scanner(System.setIn(new ByteArrayInputStream(data2.getBytes())));
-//
-//    String data2 = "1 2 3 4 5";
-//    System.setIn(new ByteArrayInputStream(data2.getBytes()));
-//
-//
-//    int expected [] = {1, 2, 3, 4, 5};
-//
-//    MinimumElementChallenge.readIntegers(5);
-//
-//    //int [] result = MinimumElementChallenge.readIntegers(5);
-//
-//    assertEquals (expected, );
+    int expected[] = {6, 70, 4, 100, 333};
 
+    ByteArrayInputStream stream = new ByteArrayInputStream(String.format("5%n 6%n 70%n 4%n 100%n 333%n").getBytes());
+    Scanner scanner = new Scanner(stream);
+
+    int result[] = MinimumElementChallenge.readIntegers(scanner);
+
+    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+
+
+  }
+
+  @Test
+  public void shouldReturnArrayWithOneElement() {
+
+    int expected[] = {-12};
+
+    ByteArrayInputStream stream = new ByteArrayInputStream(String.format("1%n -12%n").getBytes());
+    Scanner scanner = new Scanner(stream);
+
+    int result[] = MinimumElementChallenge.readIntegers(scanner);
+
+    assertEquals(Arrays.toString(expected), Arrays.toString(result));
+
+
+  }
 }
 
