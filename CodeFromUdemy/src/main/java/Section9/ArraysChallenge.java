@@ -1,7 +1,9 @@
+package Section9;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Array_Challenge {
+public class ArraysChallenge {
 
     public static void main(String[] args) {
 

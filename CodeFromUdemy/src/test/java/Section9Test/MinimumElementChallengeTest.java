@@ -1,6 +1,6 @@
-package Section6Test;
+package Section9Test;
 
-import Section6.MinimumElementChallenge;
+import Section9.MinimumElementChallenge;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
