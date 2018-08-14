@@ -3,7 +3,7 @@ package Section6;
 public class DigitSum {
 
     public static void main(String[] args) {
-        System.out.println(sumDigits(9));
+      System.out.println(sumDigits(-123));
     }
 
     public static int sumDigits(int number) {

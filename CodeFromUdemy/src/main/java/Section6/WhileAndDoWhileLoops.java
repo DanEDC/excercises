@@ -3,23 +3,26 @@ package Section6;
 public class WhileAndDoWhileLoops {
 
   public static void main(String[] args) {
-    int number = 4;
-    int finishNumber = 20;
+    sumOfFiveEvenNumbers(3, 8);
+  }
+
+  public static void sumOfFiveEvenNumbers(int startNumber, int finishNumber) {
+
     int count = 0;
 
-    while (number <= finishNumber) {
-      number++;
-      if (!isEvenNumber(number)) {
+    while (startNumber <= finishNumber) {
+      startNumber++;
+      if (!isEvenNumber(startNumber)) {
         continue;
       }
-      System.out.println("Even number " + number);
+      System.out.println("Even number " + startNumber);
       count++;
       if (count == 5) {
         break;
       }
     }
 
-    System.out.println("Total number of even numbers found is " + count);
+    System.out.print("Total number of even numbers found is " + count);
 
   }
 
