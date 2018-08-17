@@ -23,7 +23,7 @@ public class ArraysChallenge {
     }
 
     public static void printArray(int[] table) {
-        System.out.println(Arrays.toString(table));
+        System.out.print(Arrays.toString(table));
     }
 
     public static int[] sortArray(int[] nextTable) {
