@@ -10,5 +10,15 @@ public class Main {
         car.decreasing(50);
         car.changeGear(-2);
         car.reverseGear(10);
+        System.out.println(car.getSpeed());
+        System.out.println(car.getCurrentGear());
+        car.steering();
+
+        BMW bmw116i = new BMW(5, "136HP", 6, 100, "Hackback", "Grey"
+                , 4, 2);
+
+        bmw116i.acceleration(30);
+
+
     }
 }

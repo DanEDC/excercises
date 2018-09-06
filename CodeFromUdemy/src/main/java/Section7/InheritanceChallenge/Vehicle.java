@@ -27,7 +27,6 @@ public class Vehicle {
 
     }
 
-
     public boolean moving(int speed) {
         if (speed > 0) {
             System.out.println("Vehicle is moving with " + speed + " speed");
