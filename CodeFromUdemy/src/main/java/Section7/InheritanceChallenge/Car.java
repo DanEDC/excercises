@@ -8,9 +8,8 @@ public class Car extends Vehicle {
     private int currentGear;
 
 
-    public Car(int numberOfSeats, String engine, int numberOfGears, int speed, String carBodyType, String carBodyColour,
-               boolean airCondition, int currentGear) {
-        super(4, 1, numberOfSeats, engine, numberOfGears, speed);
+    public Car(String carBodyType, String carBodyColour, boolean airCondition, int currentGear) {
+        super(4, 1, 5, true, 6, 0);
         this.carBodyType = carBodyType;
         this.carBodyColour = carBodyColour;
         this.airCondition = airCondition;

@@ -5,11 +5,12 @@ public class Vehicle {
     private int wheels;
     private int steeringWheel;
     private int numberOfSeats;
-    private String engine;
+    private boolean engine;
     private int numberOfGears;
     private int speed;
 
-    public Vehicle(int wheels, int steeringWheel, int numberOfSeats, String engine, int numberOfGears, int speed) {
+    public Vehicle(int wheels, int steeringWheel, int numberOfSeats, boolean engine,
+        int numberOfGears, int speed) {
         this.wheels = wheels;
         this.steeringWheel = steeringWheel;
         this.numberOfSeats = numberOfSeats;

@@ -4,9 +4,8 @@ public class BMW extends Car {
 
     private int turboValue;
 
-    public BMW(int numberOfSeats, String engine, int numberOfGears, int speed, String carBodyType, String carBodyColour,
-               int currentGear, int turboValue) {
-        super(numberOfSeats, engine, numberOfGears, speed, carBodyType, carBodyColour, true, currentGear);
+  public BMW(int turboValue) {
+    super("Hatchback", "Grey", true, 1);
         this.turboValue = turboValue;
     }
 
