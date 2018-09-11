@@ -1,4 +1,4 @@
-package Section8.CompositionChallange;
+package Section8.CompositionChallenge;
 
 public class Walls {
     private String wallsColour;
