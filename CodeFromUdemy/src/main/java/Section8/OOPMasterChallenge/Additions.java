@@ -50,4 +50,20 @@ public class Additions {
     public boolean isOnion() {
         return onion;
     }
+
+    public void setLettuce(boolean lettuce) {
+        this.lettuce = lettuce;
+    }
+
+    public void setTomato(boolean tomato) {
+        this.tomato = tomato;
+    }
+
+    public void setCarrot(boolean carrot) {
+        this.carrot = carrot;
+    }
+
+    public void setOnion(boolean onion) {
+        this.onion = onion;
+    }
 }

@@ -7,8 +7,6 @@ public class Hamburger {
   private double baseBurgerPrice;
   private Additions additions;
 
-  private double burgerTotalPrice;
-
   public Hamburger(String breadRoll, String meat, double baseBurgerPrice, Additions additions) {
     this.breadRollType = breadRoll;
     this.meatType = meat;
@@ -47,7 +45,6 @@ public class Hamburger {
       System.out.println("The burger includes onion addition with price -  " + getAdditions().getOnionPrice()
               + "zl");
     }
-
     double burgerTotalPrice = hamburger.getBaseBurgerPrice() + additionsTotalPrice;
 
     System.out.println("Total price for burger is " + burgerTotalPrice + "zl");

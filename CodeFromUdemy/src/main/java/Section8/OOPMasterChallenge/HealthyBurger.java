@@ -30,7 +30,7 @@ public class HealthyBurger extends Hamburger {
         return cucumberPrice;
     }
 
-    public double hamburgerTotalPrice(HealthyBurger healthyBurger) {
+    public void hamburgerTotalPrice(HealthyBurger healthyBurger) {
         double baseHamburgerTotalPrice = super.hamburgerTotalPrice(healthyBurger);
         double healthyAdditionsTotalPrice = 0;
         if (healthyBurger.isSalad()) {
@@ -42,13 +42,10 @@ public class HealthyBurger extends Hamburger {
             healthyAdditionsTotalPrice += this.getCucumberPrice();
             System.out.println("The burger includes cucumber healthy addition with price -  " + this.getCucumberPrice()
                     + "zl");
-        } else {
-            System.out.println("The burger doesn't include any healthy additions");
         }
         double healthyBurgerTotalPrice = baseHamburgerTotalPrice + healthyAdditionsTotalPrice;
 
         System.out.println("Total price for healthy burger is " + healthyBurgerTotalPrice + "zl");
-        return healthyBurgerTotalPrice;
     }
 
 
