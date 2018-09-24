@@ -5,10 +5,14 @@ import java.util.ArrayList;
 public class Contacts {
 
   private String name;
-    private String phoneNumber;
+  private String phoneNumber;
+  private ArrayList<Contacts> contactsList = new ArrayList<Contacts>();
 
+  public Contacts() {
+    this.contactsList = contactsList;
+  }
 
-    public Contacts(String name, String phoneNumber) {
+  public Contacts(String name, String phoneNumber) {
     this.name = name;
     this.phoneNumber = phoneNumber;
   }
@@ -21,21 +25,19 @@ public class Contacts {
         return phoneNumber;
     }
 
-    public static Contacts createContact(String name, String phoneNumber) {
+  private static Contacts createContact(String name, String phoneNumber) {
         return new Contacts(name, phoneNumber);
 
     }
 
-  private ArrayList<Contacts> contactsList = new ArrayList<Contacts>();
-
-
-  public void addContacts(Contacts contacts) {
+  public void addContacts(String name, String phoneNumber) {
+    Contacts contacts = createContact(name, phoneNumber);
     contactsList.add(contacts);
   }
 
   public void printContactsList() {
-    System.out.println("You have" + contactsList.size() + " contacts in your contacts list");
-    for (int i = 0; i <= contactsList.size(); i++) {
+    System.out.println("You have " + contactsList.size() + " contact(s) in your contacts list:");
+    for (int i = 0; i < contactsList.size(); i++) {
       System.out.println((i + 1) + ". " + contactsList.get(i));
     }
   }
@@ -58,4 +60,10 @@ public class Contacts {
     return null;
   }
 
+  @Override
+  public String toString() {
+    return
+        "Name = " + name +
+            ", Phone number = " + phoneNumber;
+  }
 }
