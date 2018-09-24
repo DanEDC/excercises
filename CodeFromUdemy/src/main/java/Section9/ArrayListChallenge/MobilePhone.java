@@ -44,6 +44,15 @@ public class MobilePhone {
     }
   }
 
+//  private static void searchForContacts() {
+//    System.out.println("Enter contact name:");
+//    String name = scanner.nextLine();
+//    System.out.println("Enter phone number:");
+//    String phoneNumber = scanner.nextLine();
+//    myContacts.findContacts(name, phoneNumber);
+//
+//  }
+
   private static void addContacts() {
     System.out.println("Enter contact name:");
     String name = scanner.nextLine();
