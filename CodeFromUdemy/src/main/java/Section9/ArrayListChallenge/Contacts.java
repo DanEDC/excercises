@@ -1,6 +1,7 @@
 package Section9.ArrayListChallenge;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Contacts {
 
@@ -54,7 +55,23 @@ public class Contacts {
       System.out.println("Contact at position " + (position) + ". has been removed from contacts list");
   }
 
-  public Contacts findContacts(Contacts contacts) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contacts contacts = (Contacts) o;
+        return Objects.equals(getName(), contacts.getName()) &&
+                Objects.equals(getPhoneNumber(), contacts.getPhoneNumber()) &&
+                Objects.equals(contactsList, contacts.contactsList);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getName(), getPhoneNumber(), contactsList);
+    }
+
+    public Contacts findContacts(Contacts contacts) {
     int position = contactsList.indexOf(contacts);
     if (position >= 0) {
         System.out.println("Found contact");
