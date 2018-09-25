@@ -29,7 +29,7 @@ public class MobilePhone {
           addContacts();
           break;
         case 3:
-          //modifyContacts();
+          modifyContacts();
           break;
         case 4:
           removeContacts();
@@ -44,16 +44,14 @@ public class MobilePhone {
     }
   }
 
-//  private static void modifyContacts() {
-//    System.out.println("Enter position number of contact to be changed:");
-//    int positionNumber = scanner.nextInt();
-//    myContacts.removeContacts(positionNumber);
-//    System.out.println("Enter new contact name:");
-//    String newName = scanner.nextLine();
-//    System.out.println("Enter new phone number:");
-//    String newPhoneNumber = scanner.nextLine();
-//    myContacts.modifyContacts(newName, newPhoneNumber);
-//  }
+  private static void modifyContacts() {
+    System.out.println("Enter position number of contact to be changed:");
+    int positionNumber = scanner.nextInt();
+    System.out.println("Enter new contact name and/or new phone number:");
+    scanner.nextLine();
+    Contacts modifiedContact = new Contacts(scanner.nextLine(), scanner.nextLine());
+    myContacts.modifyContacts(positionNumber, modifiedContact);
+  }
 
 
   private static void removeContacts() {
@@ -65,12 +63,8 @@ public class MobilePhone {
   private static void searchForContacts() {
     System.out.println("Enter contact name, and then phone number:");
     Contacts contacts = new Contacts(scanner.nextLine(), scanner.nextLine());
-//    System.out.println("Enter phone number:");
-//    String phoneNumber = scanner.nextLine();
     myContacts.findContacts(contacts);
   }
-
-
 
   private static void addContacts() {
     System.out.println("Enter contact name:");

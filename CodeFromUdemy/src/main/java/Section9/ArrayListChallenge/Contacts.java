@@ -18,11 +18,11 @@ public class Contacts {
     this.phoneNumber = phoneNumber;
   }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
-    public String getPhoneNumber() {
+    private String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -32,11 +32,11 @@ public class Contacts {
   }
 
   public void addContacts(String name, String phoneNumber) {
-      //if (!findContacts(name, phoneNumber)) {
       Contacts contacts = createContact(name, phoneNumber);
-      contactsList.add(contacts);
-    }
-
+      if (!findContacts(contacts)) {
+          contactsList.add(contacts);
+      }
+  }
 
   public void printContactsList() {
     System.out.println("You have " + contactsList.size() + " contact(s) in your contacts list:");
@@ -46,13 +46,35 @@ public class Contacts {
   }
 
   public void modifyContacts(int position, Contacts contacts) {
-    contactsList.set(position, contacts);
-    System.out.println("Contact " + (position + 1) + " has been modified");
+      contactsList.set((position - 1), contacts);
+      System.out.println("Contact " + (position) + " has been modified");
   }
 
   public void removeContacts(int position) {
       contactsList.remove(position - 1);
       System.out.println("Contact at position " + (position) + ". has been removed from contacts list");
+  }
+
+    public boolean findContacts(Contacts contacts) {
+    int position = contactsList.indexOf(contacts);
+    if (position >= 0) {
+        System.out.println("Found existing contact:");
+        printSingleContact(contacts);
+        return true;
+
+    }
+        return false;
+  }
+
+    public void printSingleContact(Contacts contacts) {
+        int position = contactsList.indexOf(contacts);
+        System.out.println((position + 1) + ". " + contactsList.get(position));
+    }
+
+  @Override
+  public String toString() {
+    return
+            "Name = " + name + ", Phone number = " + phoneNumber;
   }
 
     @Override
@@ -70,30 +92,4 @@ public class Contacts {
 
         return Objects.hash(getName(), getPhoneNumber(), contactsList);
     }
-
-    public Contacts findContacts(Contacts contacts) {
-    int position = contactsList.indexOf(contacts);
-    if (position >= 0) {
-        System.out.println("Found contact");
-      return contactsList.get(position);
-
-    }
-    return null;
-  }
-
-    public Contacts findContacts(String name, String phoneNumber) {
-        Contacts contactToCheck = createContact(name, phoneNumber);
-        int position = contactsList.indexOf(contactToCheck);
-        if (position >= 0) {
-            return contactsList.get(position);
-    }
-        return null;
-    }
-
-
-  @Override
-  public String toString() {
-    return
-            "Name = " + name + ", Phone number = " + phoneNumber;
-  }
 }
