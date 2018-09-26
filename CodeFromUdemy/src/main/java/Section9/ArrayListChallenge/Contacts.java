@@ -33,7 +33,7 @@ public class Contacts {
 
   public void addContacts(String name, String phoneNumber) {
       Contacts contacts = createContact(name, phoneNumber);
-      if (!findContacts(contacts)) {
+      if (!findContact(contacts)) {
           contactsList.add(contacts);
       }
   }
@@ -55,7 +55,7 @@ public class Contacts {
       System.out.println("Contact at position " + (position) + ". has been removed from contacts list");
   }
 
-    public boolean findContacts(Contacts contacts) {
+    public boolean findContact(Contacts contacts) {
     int position = contactsList.indexOf(contacts);
     if (position >= 0) {
         System.out.println("Found existing contact:");
@@ -66,9 +66,34 @@ public class Contacts {
         return false;
   }
 
+    public boolean findContact(String name) {
+        for (int i = 0; i < contactsList.size(); i++) {
+            if (contactsList.get(i).getName().equals(name)) {
+                System.out.println("Found contact:");
+                System.out.println((i + 1) + ". " + contactsList.get(i));
+                return true;
+            } else {
+                i++;
+            }
+        }
+        System.out.println("Contact not found");
+        return false;
+    }
+
     public void printSingleContact(Contacts contacts) {
         int position = contactsList.indexOf(contacts);
         System.out.println((position + 1) + ". " + contactsList.get(position));
+    }
+
+    private void printSingleContact(String name) {
+        for (int i = 0; i < contactsList.size(); i++) {
+            if (contactsList.get(i).getName().contains(name)) {
+                System.out.println((i + 1) + ". " + contactsList.get(i));
+
+            }
+        }
+
+
     }
 
   @Override

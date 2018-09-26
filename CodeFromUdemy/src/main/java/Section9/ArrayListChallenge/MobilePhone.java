@@ -61,9 +61,8 @@ public class MobilePhone {
   }
 
   private static void searchForContacts() {
-    System.out.println("Enter contact name, and then phone number:");
-    Contacts contacts = new Contacts(scanner.nextLine(), scanner.nextLine());
-    myContacts.findContacts(contacts);
+    System.out.println("Enter contact name:");
+    myContacts.findContact(scanner.nextLine());
   }
 
   private static void addContacts() {
