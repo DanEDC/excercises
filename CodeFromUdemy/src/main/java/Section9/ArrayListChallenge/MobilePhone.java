@@ -45,35 +45,21 @@ public class MobilePhone {
   }
 
   private static void modifyContacts() {
-    System.out.println("Enter position number of contact to be changed:");
-    int positionNumber = scanner.nextInt();
-    System.out.println("Enter new contact name and/or new phone number:");
-    scanner.nextLine();
-    Contacts modifiedContact = new Contacts(scanner.nextLine(), scanner.nextLine());
-    myContacts.modifyContacts(positionNumber, modifiedContact);
+    myContacts.modifyContacts();
   }
 
-
   private static void removeContacts() {
-    System.out.println("Enter position number to be deleted from contacts list:");
-    int positionNumber = scanner.nextInt();
-    myContacts.removeContacts(positionNumber);
+    myContacts.removeContacts();
   }
 
   private static void searchForContacts() {
-    System.out.println("Enter contact name:");
-    myContacts.findContact(scanner.nextLine());
+    myContacts.findContact();
   }
 
   private static void addContacts() {
-    System.out.println("Enter contact name:");
-    String name = scanner.nextLine();
-    System.out.println("Enter phone number:");
-    String phoneNumber = scanner.nextLine();
-    myContacts.addContacts(name, phoneNumber);
+    myContacts.addContacts();
 
   }
-
 
   private static void printContactsList() {
     myContacts.printContactsList();
