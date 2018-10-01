@@ -5,24 +5,35 @@ import java.util.ArrayList;
 public class Customer {
 
   private String name;
-  double transactionValue;
+  private double initialTransactionValue;
 
   private ArrayList<Double> transactions = new ArrayList<>();
 
-  public Customer(String name, double transactionValue) {
+  public Customer(String name, double initialTransactionValue) {
     this.name = name;
-    this.transactions.add(Double.valueOf(transactionValue));
+    this.initialTransactionValue = initialTransactionValue;
+    this.transactions.add(initialTransactionValue);
   }
 
-  public Customer(double transactionValue) {
-    this.transactions.add(Double.valueOf(transactionValue));
+  public void addTransaction(double transactionValue) {
+    this.transactions.add(transactionValue);
+
   }
 
   public String getName() {
     return name;
   }
 
-  public double getTransactionValue() {
-    return transactionValue;
+  public ArrayList<Double> getTransactions() {
+    return transactions;
+  }
+
+  public double getInitialTransactionValue() {
+    return initialTransactionValue;
+  }
+
+  @Override
+  public String toString() {
+    return "transactions= " + transactions;
   }
 }
