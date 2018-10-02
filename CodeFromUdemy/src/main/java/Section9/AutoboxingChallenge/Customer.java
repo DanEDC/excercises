@@ -6,12 +6,12 @@ public class Customer {
 
   private String name;
   private double initialTransactionValue;
-
-  private ArrayList<Double> transactions = new ArrayList<>();
+  private ArrayList<Double> transactions;
 
   public Customer(String name, double initialTransactionValue) {
     this.name = name;
     this.initialTransactionValue = initialTransactionValue;
+    this.transactions = new ArrayList<>();
     this.transactions.add(initialTransactionValue);
   }
 
@@ -24,16 +24,16 @@ public class Customer {
     return name;
   }
 
-  public ArrayList<Double> getTransactions() {
-    return transactions;
-  }
-
   public double getInitialTransactionValue() {
     return initialTransactionValue;
   }
 
   @Override
   public String toString() {
-    return "transactions= " + transactions;
+    return "Customer{" +
+            "name='" + name + '\'' +
+            ", transactions=" + transactions +
+            '}';
   }
+
 }
