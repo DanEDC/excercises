@@ -21,23 +21,19 @@ public class Branch {
             return true;
         } else {
             for (int i = 0; i < this.customerList.size(); i++) {
-                if (this.customerList.get(i).getName().equals(customer.getName())) {
-                    System.out.println("Customer " + customer.getName() + " is already registered in the Branch " + this.branchName);
-                    return false;
-
-                } else {
+                if (!this.customerList.get(i).getName().equals(customer.getName())) {
                     this.customerList.add(customer);
                     System.out.println("Customer " + customer.getName() + " has been registered in the Branch " + this.branchName +
                             " with initial transaction value: " + customer.getInitialTransactionValue());
                     return true;
                 }
             }
-        }
+            }
+        System.out.println("Customer " + customer.getName() + " is already registered in the Branch " + this.branchName);
         return false;
     }
 
     public boolean addTransactionToBranch(String name, double transactionValue) {
-        Customer customer = new Customer(name, transactionValue);
         for (int i = 0; i < this.customerList.size(); i++) {
             if (this.customerList.get(i).getName().equals(name)) {
                 this.customerList.get(i).addTransaction(transactionValue);
@@ -47,13 +43,9 @@ public class Branch {
 
             }
         }
-        if (!this.customerList.contains(customer.getName())) {
-            System.out.println("Customer " + name + " is not registered in the Branch " + this.branchName);
-            return false;
-        }
+        System.out.println("Customer " + name + " is not registered in the Branch " + this.branchName);
         return false;
     }
-
 
 
     public String getBranchName() {
@@ -67,8 +59,6 @@ public class Branch {
                 ", customerList=" + this.customerList +
                 '}';
     }
-
-
 }
 
 

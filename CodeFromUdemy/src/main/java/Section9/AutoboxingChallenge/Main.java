@@ -4,14 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
         Bank bank = new Bank("Paribas");
+        bank.addBranch("VIP");
+        bank.addCustomerToBranch("VIP", "Daniel", 56.09);
+        bank.addTransactionToBranch("VIP", "Daniel", 66.66);
+        bank.addBranch("SuperVIP");
+        bank.addCustomerToBranch("SuperVIP", "Kasia", 100.00);
+        bank.addCustomerToBranch("SuperVIP", "Kasia", 444.90);
+        bank.addTransactionToBranch("SuperVIP", "Daniel", 66.66);
 
-        Branch branch = new Branch("VIP");
-        branch.addCustomerToBranch("Daniel", 66.09);
-        branch.addCustomerToBranch("Kasia", 100.13);
-        branch.addTransactionToBranch("Daniel", 44.90);
-
-        System.out.println(branch);
-
-
+        System.out.println(bank);
     }
 }
