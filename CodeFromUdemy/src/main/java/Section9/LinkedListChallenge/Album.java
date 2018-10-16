@@ -14,18 +14,37 @@ public class Album {
         this.listOfSongsInAlbum = new ArrayList<>();
     }
 
-    public void addSongToAlbum(String title, double duration) {
+    public boolean addSongToAlbum(String title, double duration) {
         Song song = new Song(title, duration);
         if (listOfSongsInAlbum.size() == 0) {
-            this.listOfSongsInAlbum.add(song);
+            listOfSongsInAlbum.add(song);
+            return true;
+        } else {
+            if (findSongInAlbum(title) == null) {
+                listOfSongsInAlbum.add(song);
+                return true;
+            }
+
+            System.out.println("Song " + title + " is already in album " + getAlbumName());
+            return false;
+        }
+
+    }
+
+
+    public Song findSongInAlbum(String songTitle) {
+        if (listOfSongsInAlbum.size() == 0) {
+            return null;
         } else {
             for (int i = 0; i < this.listOfSongsInAlbum.size(); i++) {
-                if (!listOfSongsInAlbum.get(i).getTitle().equals(title)) {
-                    this.listOfSongsInAlbum.add(song);
+                if (listOfSongsInAlbum.get(i).getTitle().equals(songTitle)) {
+                    return listOfSongsInAlbum.get(i);
                 }
             }
         }
+        return null;
     }
+
 
     public String getArtistName() {
         return artistName;
@@ -34,6 +53,7 @@ public class Album {
     public String getAlbumName() {
         return albumName;
     }
+
 
 }
 
