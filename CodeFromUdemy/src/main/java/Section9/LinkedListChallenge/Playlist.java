@@ -1,6 +1,7 @@
 package Section9.LinkedListChallenge;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
@@ -19,13 +20,13 @@ public class Playlist {
         albumList.add(album);
     }
 
-    public boolean addSongToPlaylist(LinkedList<Song> linkedList, String songTitle) {
+    public boolean addSongToPlaylist(String songTitle) {
         if (checkIfSongExistInAlbum(songTitle) == null) {
             System.out.println(songTitle + " song is not found in any album you own");
             return false;
         } else {
 
-            ListIterator<Song> songListIterator = linkedList.listIterator();
+            ListIterator<Song> songListIterator = this.myPlaylist.listIterator();
 
             while (songListIterator.hasNext()) {
                 int comparison = songListIterator.next().getTitle().compareTo(songTitle);
@@ -33,18 +34,10 @@ public class Playlist {
                     System.out.println(songTitle + " song is already in playlist");
                     return false;
                 }
-                if (comparison > 0) {
-                    songListIterator.previous();
-                    myPlaylist.add(checkIfSongExistInAlbum(songTitle));
-                    return true;
-                } else if (comparison < 0) {
-                }
             }
-            songListIterator.add(checkIfSongExistInAlbum(songTitle));
+            this.myPlaylist.add(checkIfSongExistInAlbum(songTitle));
             return true;
         }
-
-
     }
 
     private Song checkIfSongExistInAlbum(String songTitle) {
@@ -56,10 +49,48 @@ public class Playlist {
         return null;
     }
 
+    public void printMyPlayList() {
+        Iterator<Song> songIterator = this.myPlaylist.iterator();
+        while (songIterator.hasNext()) {
+            System.out.println(songIterator.next());
+        }
+    }
 
+    private ListIterator<Song> createListIterator() {
+        ListIterator<Song> songListIterator = this.myPlaylist.listIterator();
+        return songListIterator;
+    }
 
+    @Override
+    public String toString() {
+        return "Playlist{" +
+                "myPlaylist=" + myPlaylist +
+                '}';
+    }
 
+    public void skipForward() {
+        createListIterator();
+        if (createListIterator().hasNext()) {
+            System.out.println("Now listening " + createListIterator().next());
+        } else {
+            System.out.println("You have reached the end of playlist");
+        }
+    }
 
+    public void skipBackwards() {
+        createListIterator();
+        if (createListIterator().hasPrevious()) {
+            System.out.println("Now listening " + createListIterator().previous());
+        } else {
+            System.out.println("You have reached the beginning of playlist");
+        }
+    }
+
+    public void repeatSong() {
+    }
+
+    public void removeSong() {
+    }
 }
 
 

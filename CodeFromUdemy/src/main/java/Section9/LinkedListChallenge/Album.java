@@ -54,6 +54,13 @@ public class Album {
         return albumName;
     }
 
-
+    @Override
+    public String toString() {
+        return "Album{" +
+                "artistName='" + artistName + '\'' +
+                ", albumName='" + albumName + '\'' +
+                ", listOfSongsInAlbum=" + listOfSongsInAlbum +
+                '}';
+    }
 }
 
