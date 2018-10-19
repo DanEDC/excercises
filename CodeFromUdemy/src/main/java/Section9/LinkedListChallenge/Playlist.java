@@ -56,11 +56,6 @@ public class Playlist {
         }
     }
 
-    private ListIterator<Song> createListIterator() {
-        ListIterator<Song> songListIterator = this.myPlaylist.listIterator();
-        return songListIterator;
-    }
-
     @Override
     public String toString() {
         return "Playlist{" +
@@ -68,28 +63,8 @@ public class Playlist {
                 '}';
     }
 
-    public void skipForward() {
-        createListIterator();
-        if (createListIterator().hasNext()) {
-            System.out.println("Now listening " + createListIterator().next());
-        } else {
-            System.out.println("You have reached the end of playlist");
-        }
-    }
-
-    public void skipBackwards() {
-        createListIterator();
-        if (createListIterator().hasPrevious()) {
-            System.out.println("Now listening " + createListIterator().previous());
-        } else {
-            System.out.println("You have reached the beginning of playlist");
-        }
-    }
-
-    public void repeatSong() {
-    }
-
-    public void removeSong() {
+    public LinkedList<Song> getMyPlaylist() {
+        return myPlaylist;
     }
 }
 

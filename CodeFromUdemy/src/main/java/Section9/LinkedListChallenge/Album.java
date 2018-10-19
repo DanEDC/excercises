@@ -45,11 +45,6 @@ public class Album {
         return null;
     }
 
-
-    public String getArtistName() {
-        return artistName;
-    }
-
     public String getAlbumName() {
         return albumName;
     }
